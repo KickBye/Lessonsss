@@ -14,13 +14,21 @@ public class InitPageObject extends Base{
 
     @FindBy(xpath="(.//input[@value='Поиск в Google'])[1]")
     private WebElement submitSearch;
+
+
 //Вводим текст в строку поиска param text
     public void setSearchText(String text){
         setText(searchText, text);
     }
 
-    public void clickSubmitsSearch(){
+    public void clickSubmitsSearch() {
         click(submitSearch);
+    }
+    public void setAndClick(String text){
+        setSearchText(text);
+        clickSubmitsSearch();
+
+
     }
 
 }
